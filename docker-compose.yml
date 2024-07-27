@@ -22,11 +22,23 @@ services:
     build: ./result
     # use nodemon rather than node for local dev
     command: nodemon server.js
+    x-develop:
+      watch:
+        - action: sync
+          path: ./result
+          target: /app
+          ignore:
+            - package.json
+            - Dockerfile
+        - action: rebuild
+          path: ./result/package.json
+        - action: rebuild
+          path: ./result/Dockerfile
     depends_on:
       db:
         condition: service_healthy 
-    volumes:
-      - ./result:/app
+    # volumes:
+    #   - ./result:/app
     ports:
       - "5001:80"
       - "5858:5858"
