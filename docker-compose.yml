@@ -5,7 +5,7 @@
 services:
   vote:
     build: ./vote
-    # use python rather than gunicorn for local dev
+    # use python rather than gunicorn for local dev change here
     command: python app.py
     depends_on:
       redis:
