@@ -1,1 +1,9 @@
 node_modules/
+
+# avoiding non-container-image files
+depot.json
+README.md
+.vscode/
+Dockerfile
+*compose*.yml
+*compose*.yaml
