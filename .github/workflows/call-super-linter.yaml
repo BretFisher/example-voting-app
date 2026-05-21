@@ -17,7 +17,7 @@ jobs:
     permissions:
       contents: read # clone the repo to lint
       statuses: write #read/write to repo custom statuses
-
+      pull-requests: write
     ### use Reusable Workflows to call my workflow remotely
     ### https://docs.github.com/en/actions/learn-github-actions/reusing-workflows
     ### you can also call workflows from inside the same repo via file path
